@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Official OPL 0.9.3+ Betas features &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Official OPL 0.9.3+ Betas features</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="official-opl-0-9-3-betas-features">
+<h1><strong>Official OPL 0.9.3+ Betas features</strong><a class="headerlink" href="#official-opl-0-9-3-betas-features" title="Permalink to this headline">¶</a></h1>
+<p>Since this whole documentation is all about OPL 0.9.3 stable version –
+this page will be dedicated to the Official OPL 0.9.3+ Betas features
+that will be included in the next 0.9.4 stable version.</p>
+<div class="line-block">
+<div class="line">You can download the Official 0.9.3+ Betas from Ifcaro repository
+<a class="reference external" href="https://bitbucket.org/ifcaro/open-ps2-loader/downloads/OpenPS2Loader_0.9.3_Betas.zip">here</a>.
+You can give feedbacks/make reports about the new features in this
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-official-beta-revisions-releases-156209/">PSX-scene
+thread</a>.</div>
+<div class="line">If you are not using OPL in English, you can also download the updated
+language pack from
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-official-compatibility-list-thread-156233/">here</a>
+.</div>
+</div>
+<p><strong>Notes :</strong></p>
+<ul class="simple">
+<li><p>Not every commit made to Ifcaro repository bring a new feature – some
+are just little fix, code improvement, language update, some new
+features are committed in several commits (that’s why the reports
+from users are important). Don’t expect a comment for each commit. :P</p></li>
+<li><p>Keep in mind that betas are WIP and that some new features can affect
+game compatibility. <strong>0.9.3 should/must be your daily gaming OPL
+version</strong>.</p></li>
+</ul>
+<p><strong>New features :</strong></p>
+<ul class="simple">
+<li><p><strong>rev927-rev930:</strong> new In-Game-Screenshot (IGS) feature (see
+PSX-scene thread
+<a class="reference external" href="http://psx-scene.com/forums/f150/opl-igs-game-screenshot-123872/">here</a>).
+How to make it work :</p></li>
+</ul>
+<div class="line-block">
+<div class="line">. you need to use a OPL_GSM beta type version (IGS uses some GSM
+functions to work) ;</div>
+<div class="line">. you need to have a mc inserted in slot 2 – your screenshots will be
+saved there ;</div>
+<div class="line">. you need to enable GSM and disable IGR (mode 6 : OFF) in Game
+settings screen ;</div>
+<div class="line">. do not make a screenshot while saving – loading a save ;</div>
+<div class="line">. press the <img alt="R1" src="_images/3407914923-R1.png" /> +<img alt="R2" src="_images/2989855896-R2.png" /> + <img alt="L1" src="_images/359344587-L1.png" /> + <img alt="L2" src="_images/3537024755-L2.png" /> + <img alt="up" src="_images/3384562877-up.png" /> hotkey in-game to
+capture a screenshot ;</div>
+<div class="line">. if it worked, you are kicked back to PS2 broswer (you are stuck at a
+red screen color otherwise) ;</div>
+<div class="line">. you can find your screenshot in the mc2 – saved as
+SLES_535.07_GS.dmp, SLES_535.07_SCR.bmp.</div>
+<div class="line">Currently only 1 screenshot per game is supported – move them from mc
+before capturing again.</div>
+</div>
+<p><strong>Some screenshots :</strong></p>
+<img alt="https://s12.postimg.io/j38oqgwzh/SLES_535_07_SCRsmall.jpg" src="https://s12.postimg.io/j38oqgwzh/SLES_535_07_SCRsmall.jpg" />
+<img alt="http://psx-scene.com/forums/attachments/f150/58702-opl-igs-game-screenshot-scus_973.99_scr.bmp" src="http://psx-scene.com/forums/attachments/f150/58702-opl-igs-game-screenshot-scus_973.99_scr.bmp" />
+<img alt="http://psx-scene.com/forums/attachments/f150/58716-opl-igs-game-screenshot-slus_207.12_scr.bmp" src="http://psx-scene.com/forums/attachments/f150/58716-opl-igs-game-screenshot-slus_207.12_scr.bmp" />
+<img alt="http://psx-scene.com/forums/attachments/f150/58720-opl-igs-game-screenshot-slus_210.05_scr.bmp" src="http://psx-scene.com/forums/attachments/f150/58720-opl-igs-game-screenshot-slus_210.05_scr.bmp" />
+<ul class="simple">
+<li><p><strong>rev891-892 :</strong> IGR color sequence reworked (debug mode). More info
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-project-debug-colors-64354/index3.html#post1207452">here</a>.</p></li>
+</ul>
+<p>(TODO: image file <code class="docutils literal notranslate"><span class="pre">4004015801-DebugColors.png</span></code> is missing)</p>
+<ul class="simple">
+<li><p><strong>rev883 :</strong> <a class="reference external" href="http://psx-scene.com/forums/f150/possible-get-opl-work-decently-backwards-compatible-ps3-over-network-155082/">PS3 BC(Backwards Compatible) network support
+fixes</a>.</p></li>
+<li><p><strong>rev882-rev896 :</strong> new PS2 Logo feature. Allows to display PS2 logo
+at game startup. You need to enable this feature in the Display
+settings screen (set it to ON). The PS2 Logo will only be displayed
+if the game and your system belong to the same region – if not, PS2
+logo is not displayed. More info in this
+<a class="reference external" href="http://psx-scene.com/forums/f150/how-playstation-2-logo-after-starting-game-opl-156073/">thread</a>.</p></li>
+<li><p><strong>rev878-rev879 :</strong> IGR path and Exit OPL doesn’t share the same exit
+path anymore. “Exit OPL ?” string had been renamed “Exit to
+Browser/OSDSYS ?” and “Leave empty to exit to Browser” renamed”
+“Boots Custom ELF after an IGR”. However, if you leave the Boots
+Custom ELF after an IGR setting as default (&lt; not set &gt;), you still
+exit OPL to PS2 Broswer. More info
+<a class="reference external" href="https://bitbucket.org/ifcaro/open-ps2-loader/pull-requests/29/reverting-sysexecexit-unlinks-the-igr-and/diff">here</a></p></li>
+<li><p><strong>rev877 :</strong> GSM version upgraded from 0.36.R to 0.38 – PS2RD
+compatible. (lister)</p></li>
+<li><p><strong>rev853 :</strong> not a new feature, but a fix. The function that creates
+OPL icon in mc#:/OPL folder was broken in 0.9.3 stable release –
+displaying blue cube (corrupted data). You can fix that manually by
+downloading opl.icn and icon.sys files from <em>Source / Open PS2 Loader
+/ gfx /</em> in <a class="reference external" href="https://bitbucket.org/ifcaro/open-ps2-loader">Ifcaro
+repository</a> and
+replace the broken files by these.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/beta-features.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Official OPL 0.9.3+ Betas features</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

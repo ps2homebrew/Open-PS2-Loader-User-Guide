@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Theme guide &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Related / useful stuff" href="related.html" />
+    <link rel="prev" title="Theme gallery" href="theme-gallery.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="related.html" title="Related / useful stuff"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="theme-gallery.html" title="Theme gallery"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Theme guide</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="theme-guide">
+<h1><strong>Theme guide</strong><a class="headerlink" href="#theme-guide" title="Permalink to this headline">¶</a></h1>
+<p>OPL main GUI is composed of an ordered list of <strong>elements</strong> drawn
+starting from the element at index 0 to the last element (max num). The
+elements are named “main” followed by their order prefix:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0</span>
+<span class="n">main1</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>The element <strong>numbering must be consecutive</strong> (i.e no missing number in
+the middle, or OPL will ignore your last elements).</p>
+<p>The minimal layout must have at least a <em>Background</em>, and the
+<em>ItemsList</em>. If you omit them, they will be added automatically for you
+with default attributes. The <strong>Background</strong> must be the lowest element
+of the list ! If you try to add a Background at some other position, it
+will be ignored (and a new default Background will be create instead at
+position 0), so be sure sure to define your own background as first
+element.</p>
+<p>Each elements have the same set of basic <strong>attributes</strong>, and then some
+have their own specific attributes. Basic attributes have default
+values, so you can (but it is not necessarily a good idea) omit to
+define them in your conf_theme.cfg. Any attributes declared in the
+conf_theme.cfg override the default.</p>
+<hr class="docutils" />
+<section id="attributes">
+<h2><em>Attributes</em><a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start to describe the basic attributes (refers to the <a class="reference external" href="http://opl.sksapps.com/index.php?opl=theme.html">official
+OPL 0.8 guide</a> for
+more information):</p>
+<ul class="simple">
+<li><p><strong>enabled</strong>: Boolean, define if your element is enabled or not.
+Enabled by default.</p></li>
+<li><p><strong>type</strong>: String value taken from the enumeration of available
+elements (see below). This attribute is mandatory, if it is not
+present or invalid (beware it is case sensitive) your element will be
+completely ignored.</p></li>
+<li><p><strong>x</strong>: Integer, define the X position of your element, default is 0.
+If you want to dispose your element exactly in the middle of the
+screen, use the String value of “POS_MID”.</p></li>
+<li><p><strong>y</strong>: Same as above, but for the Y position.</p></li>
+<li><p><strong>width</strong>: Integer, define the width of your element, default is to
+use the size of the element (image/text) itself. You can force/resize
+it with this attribute.</p></li>
+<li><p><strong>height</strong>: Same as above but for height.</p></li>
+<li><p><strong>aligned</strong>: Alignment mode, refer to original guide. Default is
+usually the expected value, so omit it.</p></li>
+<li><p><strong>color</strong>: Color used for element that contains “text”. Default is to
+use the “text_color” of your theme. String of type “#RRGGBB”. Refers
+to original guide.</p></li>
+<li><p><strong>font</strong>: Integer. Font used for element that contains “text”. Can
+either use the theme default, or OPL default (set in the “Display
+settings”). Read more below.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="elements">
+<h2><em>Elements</em><a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h2>
+<p>Now the list of elements:</p>
+<ul class="simple">
+<li><p><strong>MenuIcon</strong>: Top left menu icon. No specific attributes.</p></li>
+<li><p><strong>MenuText</strong>: Top middle menu description. No specific attributes.</p></li>
+<li><p><strong>ItemsList</strong>: Contains the list of items (games/apps).</p></li>
+<li><p><strong>Attribute items</strong>: Integer, describe how many items you want to
+display at most. Same as the old theme setting “displayed_items”.
+Default value is calculated depending of the screen height.</p></li>
+<li><p><strong>Attribute decorator</strong>: String. You put here the pattern attribute
+of a GameImage element you have define in your conf_theme.cfg and you
+want to use as decorator for each items. This is to replace the old
+theme setting “items_list_icons” which was adding by default the Item
+Icon in front of each item. If no present, there will be no
+decoration.</p></li>
+<li><p><strong>ItemIcon</strong>: Some alias to provide the old item icon functionality.
+This element is in fact a GameImage element with some hard-coded
+attribute values (pattern=ICO, default=disc, cache=20). Read below
+the GameImage description for specific attributes.</p></li>
+<li><p><strong>ItemCover</strong>: Alias for old item cover functionality. This element
+is a GameImage element with hard-coded attribute values (pattern=COV,
+cache=10).</p></li>
+<li><p><strong>ItemText</strong>: Display the current item startup elf. No specific
+attributes.</p></li>
+<li><p><strong>HintText</strong>: Display the hints at bottom. No specific attributes.</p></li>
+<li><p><strong>LoadingIcon</strong>: Display the busy icon. No specific attributes.</p></li>
+<li><p><strong>Background</strong>: Define the background mode to use. Replace the old
+theme setting “background_mode”. It is a “mutable” element, depending
+of the attributes you use, it will either be a StaticImage (for mode
+BG_PICTURE), or a GameImage (for mode BG_ART).</p></li>
+<li><p><strong>AttributeText</strong>: Display a text string, corresponding of the
+specific value of the attribute for the current game. Can only be
+used in the information page.</p></li>
+<li><p><strong>Attribute attribute</strong>: String. The attribute bound to this element.
+Currently you have these predefined internal attributes: #Media,
+#Format, #Name, #Startup, #Size.</p></li>
+<li><p><strong>AttributeImage</strong>: Display a picture, whom path is based on the
+value of the attribute for the current game. Can only be used in the
+information page.</p></li>
+<li><p><strong>Attribute attribute</strong>: String. The attribute bound to this element.
+Same as above.</p></li>
+<li><p><strong>GameImage</strong>: An element that display an image depending of the
+current item selected (using the gamecode as prefix).</p></li>
+<li><p><strong>Attribute pattern</strong>: String. This attribute is mandatory. It
+describe what suffix to append to the gamecode to find the image.
+Item icon/cover element above are using the default pattern of
+“ICO”/“COV” for example. You can add whatever you want (“SCR” for
+screen shot for example).</p></li>
+<li><p><strong>Attribute count</strong>: Integer. Define how many image OPL will cache
+for this element. Item icon/cover element use by default 30/10.
+Default is only 1. Beware with this settings, as if you are using big
+image for this element and a big cache, OPL will undoubtedly crash in
+out of memory. Moreover if you use a lot of GameImage elements.</p></li>
+<li><p><strong>Attribute default</strong>: String. Define the name of an optional picture
+to display when there is no corresponding picture for the current
+game. Without this attribute, there will be nothing drawn in that
+case. The picture is search inside your theme sub-folder. The name is
+without the extension (”.png” and “.jpg” will be tried).</p></li>
+<li><p><strong>StaticImage</strong>: An element that display a static image from your
+theme subfolder. Could be used as background, to include “frames” or
+to add any other fixed picture.</p></li>
+<li><p><strong>Attribute default</strong>: String. This attribute is mandatory. Name of
+your picture (inside your theme sub-folder), without the extension
+(”.png” and “.jpg” will be tried).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="about-overlay">
+<h2><em>About overlay</em><a class="headerlink" href="#about-overlay" title="Permalink to this headline">¶</a></h2>
+<p>The three main elements displaying image (GameImage, StaticImage and
+later AttributeImage) support the use of overlay. Read the original
+guide to see what it is exactly.</p>
+<p>To add an overlay to your element, you just have to add these specific
+attributes:</p>
+<ul class="simple">
+<li><p><strong>overlay</strong>: String. The name of the picture to use as overlay,
+located into your theme sub-folder. The name is without the
+extension, and <strong>only “.png”</strong> are accepted.</p></li>
+<li><p><strong>overlay_ulx, overlay_uly, overlay_urx, overlay_ury, overlay_llx,
+overlay_lly, overlay_lrx, overlay_lry</strong>: Integer, same as before with
+a little bit renaming (ul=upper left, ur=upper right, ll=lower left,
+lr=lower right).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="about-information-page">
+<h2><em>About Information page</em><a class="headerlink" href="#about-information-page" title="Permalink to this headline">¶</a></h2>
+<p>Before running a game, you can display an information page about the
+game. To define what is displayed, use the same syntax as for the “main
+menu”, but use the “info” keyword instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">info0</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Background</span>
+<span class="n">info1</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">AttributeText</span>
+        <span class="n">attribute</span><span class="o">=</span><span class="c1">#Name</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">POS_MID</span>
+        <span class="n">y</span><span class="o">=</span><span class="mi">25</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="about-background">
+<h2><em>About background</em><a class="headerlink" href="#about-background" title="Permalink to this headline">¶</a></h2>
+<p>Here some example to help you defining your type of background.</p>
+<p>To have the default (old) background displaying Art (BG_ART), using the
+filename pattern of “SLUSXXX.YY_BG.png/jpg”, and if case of failure
+using
+“<a class="reference external" href="http://background.png/jpg&amp;#8221">background.png/jpg&amp;#8221</a>;, just
+… don’t add any Background element to your config theme, OPL will add it
+automatically.</p>
+<p>To have a background displaying Art but using another ART pattern and
+another default picture, use this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Background</span>
+        <span class="n">pattern</span><span class="o">=</span><span class="n">FANART</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">mycoolbackground</span>
+</pre></div>
+</div>
+<p>To have a background displaying only one static picture, use this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Background</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">mycoolbackground</span>
+</pre></div>
+</div>
+<p>To have the old plasma background, use this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Background</span>
+</pre></div>
+</div>
+<p>To make your background fit both widescreen and standard ratios or even
+PAL and NTSC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0</span><span class="p">:</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">Background</span>
+    <span class="n">pattern</span><span class="o">=</span><span class="n">BG</span>
+<span class="n">main1</span><span class="p">:</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">StaticImage</span>
+    <span class="n">default</span><span class="o">=</span><span class="n">mycoolbackground</span>
+    <span class="n">aligned</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">scaled</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">DIM_INF</span>
+    <span class="n">height</span><span class="o">=</span><span class="n">DIM_INF</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="about-fonts">
+<h2><em>About fonts</em><a class="headerlink" href="#about-fonts" title="Permalink to this headline">¶</a></h2>
+<p>As this feature of Volca is also only present since the beta, it’s the
+right place and moment to explain how it works.</p>
+<p>By default all text elements of the GUI are using the global font
+setting of OPL. Now when loading a theme, you can override this global
+font with the theme attribute default_font. Now, this font will be used
+by your elements. You can even define other multiple fonts, and assign
+them to specific elements only, using the font attribute of each
+element.</p>
+<p>Here is a snippet showing how to define the fonts of your theme, using
+the default_font attribute and an ordered list of filenames (this time
+it’s a full path with extension) relative to your theme sub-folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default_font</span><span class="o">=</span><span class="n">mymainfont</span><span class="o">.</span><span class="n">ttf</span>
+<span class="n">font0</span><span class="o">=</span><span class="n">fontformenu</span><span class="o">.</span><span class="n">ttf</span>
+<span class="n">font1</span><span class="o">=</span><span class="n">fontforhint</span><span class="o">.</span><span class="n">ttf</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">main3</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">MenuText</span>
+        <span class="n">font</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">main4</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">HintText</span>
+        <span class="n">font</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="notes">
+<h2><em>Notes</em><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>When using “StaticImage”, those later are affected by the screen ratio
+(wide-screen mode or not), which is usually a good thing. But when
+putting a “frame” layer on top of the background, in this case you would
+like to have it enlarged exactly like the background.</p>
+<p>To achieve this result, you should use a picture of the same resolution
+as your background (eventually with empty – alpha – region), and force
+it’s size to “infinite” using the specific values “-1”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main0_type</span><span class="o">=</span><span class="n">Background</span>
+<span class="n">main1</span><span class="p">:</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">StaticImage</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">frames</span>
+        <span class="n">width</span><span class="o">=-</span><span class="mi">1</span>
+        <span class="n">height</span><span class="o">=-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>There is no “background_alt_mode” theme setting anymore … and there may
+be no solution in the future …</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p>When displaying the “info” page for a game, OPL will read this file, and
+store the “key=value” pair. Then OPL will add automatically a few
+internal attributes to this config set, which are prefixed by a “#”.</p>
+<p>These are:</p>
+<ul class="simple">
+<li><p>#Name : Contains the exact same name that is displayed in the
+standard list view</p></li>
+<li><p>#Longname : only for APP, display the “long name”, i.e with full path
+for the application</p></li>
+<li><p>#Media : contains either “CD” or “DVD”, depending of the game type.</p></li>
+<li><p>#Format : contains one of “UL” / “ ISO” / “HDL”</p></li>
+<li><p>#Size : the size in MB of the game</p></li>
+<li><p>#Startup : the game ID code, as displayed in the standard view</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>Theme guide</strong></a><ul>
+<li><a class="reference internal" href="#attributes"><em>Attributes</em></a></li>
+<li><a class="reference internal" href="#elements"><em>Elements</em></a></li>
+<li><a class="reference internal" href="#about-overlay"><em>About overlay</em></a></li>
+<li><a class="reference internal" href="#about-information-page"><em>About Information page</em></a></li>
+<li><a class="reference internal" href="#about-background"><em>About background</em></a></li>
+<li><a class="reference internal" href="#about-fonts"><em>About fonts</em></a></li>
+<li><a class="reference internal" href="#notes"><em>Notes</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="theme-gallery.html"
+                        title="previous chapter"><strong>Theme gallery</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="related.html"
+                        title="next chapter"><strong>Related / useful stuff</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/theme-guide.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="related.html" title="Related / useful stuff"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="theme-gallery.html" title="Theme gallery"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Theme guide</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

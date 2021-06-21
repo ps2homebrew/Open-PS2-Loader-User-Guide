@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Apps Page &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OPL Main menu" href="menu.html" />
+    <link rel="prev" title="In-Game-Reset" href="igr.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="menu.html" title="OPL Main menu"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="igr.html" title="In-Game-Reset"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Apps Page</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="apps-page">
+<h1><strong>Apps Page</strong><a class="headerlink" href="#apps-page" title="Permalink to this headline">¶</a></h1>
+<p>Open PS2 Loader 0.9.3 features an ELF loader, that can launch apps
+directly from a list – much the same as you would for PS2 games – from
+any device. You will need to manually create a configuration file named
+<strong>conf_apps.cfg</strong> (lowercase).</p>
+<p>conf_apps.cfg file will be read / loaded / saved in this order
+(basically from the faster to the slowler device) :</p>
+<p><strong>MC0 &gt;&gt; MC1 &gt;&gt; HDD &gt;&gt; USB</strong></p>
+<p>If OPL fails to write or find conf_apps.cfg on MC, it looks on HDD and
+etc…</p>
+<p>For HDD, conf_apps.cfg is stored in the root of the +OPL partition ; for
+USB, it is stored in the root of the USB device.</p>
+<section id="create-the-conf-file">
+<h2><em>Create the conf file :</em><a class="headerlink" href="#create-the-conf-file" title="Permalink to this headline">¶</a></h2>
+<p>Open any text editor , create a new document and make an entry for each
+app you wish displayed in OPL. This file will go in
+mc?:/OPL/conf_apps.cfg. You can also use uLaunchELF to create this file
+from the PS2. [FileBrowser &gt; MISC &gt; TextEditor]</p>
+<p>Syntax :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="n">of</span> <span class="n">app</span><span class="o">=</span><span class="n">Path</span> <span class="n">to</span> <span class="n">file</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>uLaunchELF=mc?:/BOOT/BOOT.ELF
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>“Name of app” will be the Title Name displayed in the list.</p></li>
+<li><p>“Path to file” will be where your apps are stored, be sure to use a
+device you plan to have enabled or it will not launch if the device
+is not enabled.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="paths-for-each-device">
+<h2><em>Paths for each device :</em><a class="headerlink" href="#paths-for-each-device" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>for <strong>memory card</strong> : you can launch ELFs from either MC. You can
+either specify on which MC your ELF is stored on (mc0:/ for MC in
+slot1 and mc1:/ MC in slot2) or use mc?:/ for OPL to look on both MCs
+for the file.</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sega Master System Emulator=mc0:/APPS/SMSE.ELF
+Sega Mega Drive Emulator=mc1:/BOOT/PGEN.ELF
+PlayStation Emulator=mc?:/BETA/PS2PSXe.ELF
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>for <strong>usb device</strong> : you can launch ELFs from either of the USB
+Slots. ELF files can be on the root or in a subfolder. Simply use the
+mass: prefix, or if you have more than one USB device connected
+mass0:/, mass1:/, etc.</p></li>
+</ul>
+<p>Examples :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sega</span> <span class="n">Master</span> <span class="n">System</span> <span class="n">Emulator</span><span class="o">=</span><span class="n">mass</span><span class="p">:</span><span class="o">/</span><span class="n">ELFS</span><span class="o">/</span><span class="n">SMSE</span><span class="o">.</span><span class="n">ELF</span>
+<span class="n">Sega</span> <span class="n">Mega</span> <span class="n">Drive</span> <span class="n">Emulator</span><span class="o">=</span><span class="n">mass0</span><span class="p">:</span><span class="o">/</span><span class="n">PGEN</span><span class="o">.</span><span class="n">ELF</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>for <strong>smb share</strong> : ELF files can be on the root or in a subfolder.
+Use the <a class="reference external" href="smb:/">smb:/</a> prefix, or smb0:/</p></li>
+</ul>
+<p>Examples :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CodeBreaker</span> <span class="n">v10</span><span class="o">=</span><span class="n">smb</span><span class="p">:</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">CBv10</span> <span class="n">BOOT</span> <span class="n">noCdStop</span><span class="o">.</span><span class="n">ELF</span>
+<span class="n">GSM</span><span class="o">=</span><span class="n">smb0</span><span class="p">:</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">GSM</span><span class="o">.</span><span class="n">ELF</span>
+<span class="n">Simple</span> <span class="n">Media</span> <span class="n">System</span><span class="o">=</span><span class="n">smb</span><span class="p">:</span><span class="o">/</span><span class="n">SMS</span><span class="o">.</span><span class="n">ELF</span>
+<span class="n">uLaunchELF</span><span class="o">=</span><span class="n">smb0</span><span class="p">:</span><span class="o">/</span><span class="n">BOOT</span><span class="o">.</span><span class="n">ELF</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>for <strong>HDD</strong> : ELFs on HDD must be put in the “+OPL” Partition. The
+“hdd0:+OPL” partition is mounted by OPL into a “virtual” device
+called pfs0:/. You must use this prefix for your path.</p></li>
+</ul>
+<p>Examples :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sega</span> <span class="n">Mega</span> <span class="n">Drive</span> <span class="n">Emulator</span><span class="o">=</span><span class="n">pfs0</span><span class="p">:</span><span class="o">/</span><span class="n">APPS</span><span class="o">/</span><span class="n">PGEN</span><span class="o">.</span><span class="n">ELF</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="launching-the-apps">
+<h2><em>Launching the apps :</em><a class="headerlink" href="#launching-the-apps" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">You will need to enable “Applications start mode” (AUTO or MANUAL) in
+the Settings screen before you can access apps page and launch any
+apps.</div>
+<div class="line">Simply select an app to launch and press the select button to launch
+it.</div>
+</div>
+<p><strong>Notes :</strong></p>
+<ul class="simple">
+<li><p>Some apps can just not be launched from a certain device ;</p></li>
+<li><p>Some apps can just not be launched from OPL page ;</p></li>
+<li><p>Some apps can just not be launched from the last OPL stable version.</p></li>
+</ul>
+<p><strong>Note :</strong> if you got the “Error : cannot run the item” message when
+trying to run an app, check the path in conf_apps.cfg.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>Apps Page</strong></a><ul>
+<li><a class="reference internal" href="#create-the-conf-file"><em>Create the conf file :</em></a></li>
+<li><a class="reference internal" href="#paths-for-each-device"><em>Paths for each device :</em></a></li>
+<li><a class="reference internal" href="#launching-the-apps"><em>Launching the apps :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="igr.html"
+                        title="previous chapter"><strong>In-Game-Reset</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="menu.html"
+                        title="next chapter"><strong>OPL Main menu</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/apps-page.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="menu.html" title="OPL Main menu"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="igr.html" title="In-Game-Reset"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Apps Page</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

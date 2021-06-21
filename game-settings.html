@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Game settings screen &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Graphics Synthesizer Mode Selector 0.36.R" href="gsm.html" />
+    <link rel="prev" title="HDD mode" href="hdd-mode.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gsm.html" title="Graphics Synthesizer Mode Selector 0.36.R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hdd-mode.html" title="HDD mode"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Game settings screen</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="game-settings-screen">
+<span id="game-settings"></span><h1><strong>Game settings screen</strong><a class="headerlink" href="#game-settings-screen" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">—-</div>
+<div class="line"><em>[Default values are marked in bold]</em></div>
+</div>
+<p><strong>Note :</strong> OPL 0.9.3 uses per-game configuration files. Instead of
+storing in-game compatibility settings into a global configurations file
+like in previous OPL versions, it now stores such data as compatibility
+modes, VMC, and any applicable DNAS data inside per-game configuration
+files named &lt;game ID&gt;.cfg (i.e. SCUSxxx_xx.cfg) which will be stored in
+the CFG folder on the device your run your games from (either mass:/CFG
+or smb:/your_shared_folder/CFG or hdd:/+OPL/CFG). If you are running an
+official OPL 0.9.3+ beta, these &lt;game ID&gt;.cfg will be stored in a
+CFG-DEV folder instead.</p>
+<p>(TODO: image file <code class="docutils literal notranslate"><span class="pre">2093241865-game-settings.png</span></code> is missing)</p>
+<p><strong>Game settings screen :</strong></p>
+<ul class="simple">
+<li><p><strong>Compatibility Modes :</strong></p></li>
+</ul>
+<p>Though OPL has a very high compatibility rate using the default
+settings, some games might need a compatibility mode to run correctly.
+Press the select button to enable (ON) or disable (OFF) a mode.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Mode</strong></p></td>
+<td><p><strong>Mode name</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+<td><p><strong>Device</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Accurate Reads</p></td>
+<td><p>Emulate the reading
+performance and
+behaviour of the
+CD/DVD drive,
+without ever
+needing to use some
+slow transfer mode
+like MWDMA mode 0.
+Required by buggy
+games that glitch
+when exposed to the
+higher transfer
+rates and the
+synchronous nature
+of HDD mode.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Synchronous Mode</p></td>
+<td><p>Makes OPL read data
+synchronously (read
+immediately upon
+receiving the
+request) instead of
+asynchronously (in
+the background).
+Reads will take
+place immediately
+from the calling
+thread. Some games
+will need this
+because of their
+design.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Unhook Syscalls</p></td>
+<td><p>OPL will not remain
+resident in EE RAM
+after the game
+resets the IOP with
+its IOPRP image.
+Required for games
+that can overwrite
+OPL or can somehow
+confuse OPL’s
+SifSetDma hook.
+When this mode is
+used, mode 6
+(disable IGR) must
+be disabled. GSM
+and PS2RD cannot be
+used either.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0 PSS mode</p></td>
+<td><p>Changes the
+reported sizes of
+PSS video files to
+0 (make .PSS files
+dummies), so that
+they will be
+skipped. Useful for
+slow devices like
+USB and SMB. Useful
+if the game
+contains a lot some
+PSS file you want
+to skip . This mode
+fixes some games
+that freezes due to
+timing issue with
+videos (Max Payne).</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Emulate DVD-DL</p></td>
+<td><p>Emulates DVD-DL for
+flatterned DVD9
+images to DVD5
+image using rip
+kits. DVD-DL
+support must be
+emulated because
+OPL will otherwise
+treat such a disc
+image as a regular
+single-layer disc.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Disable IGR</p></td>
+<td><p>Disable In-Game
+Reset (IGR). IGR
+may cause problems
+for some games,
+hence disabling it
+may be necessary.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>High module storage</p></td>
+<td><p>For games that need
+OPL to store its
+modules elsewhere,
+to avoid a memory
+conflict (Fatal
+Frame). Meant to
+shift the module
+storage of OPL from
+0×00097000
+to 0×01C00000.</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Hide DEV9 module</p></td>
+<td><p>A bit like “Disable
+Network support”
+mode of some HDL
+versions. For HDD
+mode, CDVDMAN
+reports itself as
+“dev9” so that
+games with network
+support will not
+lose their network
+support. But it
+appears that some
+games like Need for
+Speed: Underground
+2 will not work if
+dev9 is visibly
+resident.</p></td>
+<td><p>All</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note :</strong> some compatibility modes changed since OPL 0.9.2 – and some
+even changed during 0.9.3 developpement.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Configure GSM :</strong> leads you to GSM screen page – will allow you to
+force video modes in-game. Read more about GSM
+<a class="reference internal" href="gsm.html#gsm"><span class="std std-ref">here</span></a>.</p></li>
+<li><p><strong>DMA mode :</strong> &lt; <strong>no values</strong> / (see list below) &gt; – allows you to
+set the transfer mode that will have an impact on HDD reading speed.
+It may help some problematic games to run better. Indeed, some
+(buggy) games break down when data is transferred at a higher rate.
+Not available for USB and ETH games.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 17%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Mode</strong></p></td>
+<td><p><strong>Speed</strong></p></td>
+<td><p><strong>Note</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>UDMA-4</p></td>
+<td><p>66MB/s</p></td>
+<td><p>Internal HDD default reading speed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UDMA-3</p></td>
+<td><p>44MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UDMA-2</p></td>
+<td><p>33MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UDMA-1</p></td>
+<td><p>25MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UDMA-0</p></td>
+<td><p>16MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MDMA-2</p></td>
+<td><p>16MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MDMA-1</p></td>
+<td><p>13MB/s</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MDMA-0</p></td>
+<td><p>4MB/s</p></td>
+<td><p>MDMA mode 0 offers the closest transfer
+rate to the CD/DVD drive’s transfer rate,
+although it is still a little faster.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>VMC screen section :</strong> allow you to create a VMC file or assign /
+configure an existing one to a selected game. Read more about VMC
+<a class="reference external" href="https://bitbucket.org/ShaolinAssassin/open-ps2-loader_documentation-project-do-not-delete/wiki/vmc">here</a>.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Game ID :</strong> &lt; <strong>not set</strong> / &gt; – press the select button without a
+disc in the tray and you can input a Game ID for online DNAS
+authentication. You can not play Online from Network Games, since the
+network is already in use to run the game.</p></li>
+<li><p><strong>Load from disc :</strong> allows you to get the ID from your original game
+disc by inserting the disc in the tray and pressing the select
+button.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Custom ELF :</strong> &lt; <strong>not set</strong> &gt; – this option lets you define a path
+to a custom ELF within multi-ELF games, compilations, and PS2 Demo
+discs. You can enter whatever ELF name is required to launch the
+demo/game. This is only needed when the startup ELF inside the ISO is
+NOT THE SAME as the game prefix (ex: SCES_xxx_xx). For example, the
+well known 4 Edges demo has a startup ELF named “4EDGES.ELF’. In that
+case, name the ISO as “The Black Lotus – 4 Edges.iso” and then put
+“4EDGES.ELF” as the custom ELF.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Save changes :</strong> will save any changes you made on this screen.</p></li>
+<li><p><strong>Test :</strong> allows you to try a mode/setting without saving it. Runs
+the game immediately.</p></li>
+<li><p><strong>Download defaults :</strong> allows you to download defaults records
+reported by users from <a class="reference external" href="http://sx.sytes.net/oplcl/games.aspx">OPL-CL
+site</a> (&lt;game ID&gt;.cfg files
+including compatibility modes, settings, game data…). Read more about
+this in the <a class="reference internal" href="network-update.html#network-update"><span class="std std-ref">Network update section</span></a>.</p></li>
+<li><p><strong>Remove all settings :</strong> will revert all the settings to the default
+settings and auto-save.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><img alt="title" src="_images/74665754-cross.png" /> or <img alt="image1" src="_images/4184835271-circle.png" /> (according to the select button you choose in the
+settings screen) – returns you to the previous screen without any
+changes made.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="hdd-mode.html"
+                        title="previous chapter"><strong>HDD mode</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gsm.html"
+                        title="next chapter"><strong>Graphics Synthesizer Mode Selector 0.36.R</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/game-settings.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gsm.html" title="Graphics Synthesizer Mode Selector 0.36.R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hdd-mode.html" title="HDD mode"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Game settings screen</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

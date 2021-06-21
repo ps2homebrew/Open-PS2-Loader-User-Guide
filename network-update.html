@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Network update &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="HDL Server" href="hdl-server.html" />
+    <link rel="prev" title="Network config" href="network-config.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="hdl-server.html" title="HDL Server"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="network-config.html" title="Network config"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Network update</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="network-update">
+<span id="id1"></span><h1><strong>Network update</strong><a class="headerlink" href="#network-update" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">—-</div>
+<div class="line"><em>[Default values are marked in bold]</em></div>
+</div>
+<p>Open PS2 Loader 0.9.3 has an embedded Network feature, that allows you
+to download &lt;game_ID&gt;.cfg files from
+<a class="reference external" href="http://sx.sytes.net/oplcl/games.aspx">OPL-CL</a> site. You can access
+its main page in OPL menu [Menu &gt; Network update]. &lt;game_ID&gt;.cfg files
+are stored in your CFG folder and contain games settings data (such as
+compatibility modes reported by users…) and game informations that can
+be displayed on the info page (you need to use a theme that supports
+info page for that). The Network update is disabled by default so you
+need to enable it in its page before using it.</p>
+<div class="line-block">
+<div class="line">To be able to use the Network update feature, you first need to go the
+Network settings screen, then set the DNS server IP adress :</div>
+<div class="line">. if you’re using a router/switch in your network, that is your DNS
+server.</div>
+<div class="line">.</div>
+</div>
+<img alt="title" src="_images/3523691033-network-update.png" />
+<p><strong>Network update screen :</strong></p>
+<ul class="simple">
+<li><p><strong>Re-download existing records ?</strong> &lt; <strong>Off</strong> / On &gt; – set it to ON to
+enable the Network update feature.</p></li>
+<li><p><strong>Start</strong> : when selected, starts bulk download all &lt;game_ID&gt;.cfg
+files for (only) your games from opl-cl site (as long as they exist
+on the site). OPL connects to the server and a progress bar appears
+on the screen – sorry if I spoil too much :P</p></li>
+</ul>
+<p>You can also use the Network update feature from the <a class="reference internal" href="game-settings.html#game-settings"><span class="std std-ref">Game settings</span></a>
+screen [Download defaults option]. Using it from there will let you
+download the &lt;game_ID&gt;.cfg file for only this particular game.</p>
+<p><strong>Notes :</strong></p>
+<ul class="simple">
+<li><p>OPL-CL still is still WIP – reports from registred users is not
+implemented yet. In the waiting, you can make your reports
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-official-compatibility-list-thread-156233/">here</a>
+and a maintainer will add your report himself to the data base;</p></li>
+<li><p>That it is a collaborative feature : if no one “feeds” it, there is
+nothing to download;</p></li>
+<li><p>You can also download &lt;game_ID&gt;.cfg files from your computer,
+connected to the site;</p></li>
+<li><p>More info about OPL-CL site can be found
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-compatibility-list-site-132906/">here</a>
+;</p></li>
+<li><p>Last, &lt;game_ID&gt;.cfg files downloaded will be flagged as
+$ConfigSource=2 (other values : 0 or if missing = defaults by OPL, 1
+= user-modified within OPL) – useless info for the user, just for the
+records.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="network-config.html"
+                        title="previous chapter"><strong>Network config</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hdl-server.html"
+                        title="next chapter"><strong>HDL Server</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/network-update.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="hdl-server.html" title="HDL Server"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="network-config.html" title="Network config"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Network update</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

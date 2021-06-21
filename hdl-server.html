@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>HDL Server &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cheats settings" href="cheat-settings.html" />
+    <link rel="prev" title="Network update" href="network-update.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cheat-settings.html" title="Cheats settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="network-update.html" title="Network update"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>HDL Server</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="hdl-server">
+<span id="id1"></span><h1><strong>HDL Server</strong><a class="headerlink" href="#hdl-server" title="Permalink to this headline">¶</a></h1>
+<p>Open PS2 Loader 0.9.3 features an integrated HDL server, that allows you
+to install your games onto your internal HDD over the network. It’s
+disabled and hidden by default. You need to enable your HDD [Settings &gt;
+HDD device start mode &gt; AUTO or MANUAL] and enable write operations
+[Settings &gt;Enable write operations &gt; ON] before using it. It’s located
+in main OPL menu.</p>
+<p>You will also need to have your network config properly set so an IP can
+be assigned to your PS2. See <a class="reference internal" href="network-config.html#network-config"><span class="std std-ref">Network config</span></a>
+page to know how to.</p>
+<p>Finally, you will need a PC client. I suggest you to use <a class="reference external" href="https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/downloads/HDLDump%20Helper%20GUI%20v2.3.7z">HDLDump Helper
+GUI
+v2.3</a>
+(set on hdl_dump_086 version – already done in the archive).</p>
+<p><strong>How to use it :</strong></p>
+<p><strong>1.</strong> [PS2] Start HDL Server from OPL Menu.</p>
+<p><strong>2.</strong> [PC] When HDL server status switches from “HDL Server starting”
+to “HDL Server running”, run HDLDump Helper GUI v2.3.</p>
+<img alt="title" src="_images/3284436321-hdl-gui.png" />
+<p><strong>3.</strong> [PC] Enter you PS2 IP adress and click on “Connect”.</p>
+<p><strong>4.</strong> [PC] Once the connection is done between your PC and your PS2, a
+bar will appear, showing you how much space left on your HDD.</p>
+<p><strong>5.</strong> [PC] “Install” tab allows you to install games, “Browse” allows
+you to see which games are install on your HDD and delete them from
+there, “Jobs” tab allows you to see the next tasks if you want to
+install several games at once.</p>
+<p><strong>6.</strong> [PC] To install a game, select the source (either ISO or CD drive
+from your PC), specify if it’s a CD or DVD, enter a name for you game
+(up-to 32 characters) and “start-up” (i.e. the main ELF of your game)
+should be detected).</p>
+<p><strong>7.</strong> [PC] Do not bother yourself about Compatibility modes, these are
+for HDLoader and they will be ignored by OPL. If you want to install
+several games at once, click on “Add to jobs”, otherwise / once done,</p>
+<p><strong>8.</strong> [PC] click “Install” and go enjoy a coffee/cig combo (smoking is
+bad for health, BTW :P ).</p>
+<p><strong>9.</strong> [PC] Once the install is completed, close HDLDump Helper GUI
+v2.3.</p>
+<div class="line-block">
+<div class="line"><strong>10.</strong> [PS2] You can now unload HDL Server, by pressing the un-select
+button and go back to main OPL menu.</div>
+<div class="line">Congrats, you did it.</div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="network-update.html"
+                        title="previous chapter"><strong>Network update</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cheat-settings.html"
+                        title="next chapter"><strong>Cheats settings</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/hdl-server.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="cheat-settings.html" title="Cheats settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="network-update.html" title="Network update"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>HDL Server</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

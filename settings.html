@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Settings screen &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Display settings screen" href="display-settings.html" />
+    <link rel="prev" title="OPL Main menu" href="menu.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="display-settings.html" title="Display settings screen"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="menu.html" title="OPL Main menu"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Settings screen</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="settings-screen">
+<span id="settings"></span><h1><strong>Settings screen</strong><a class="headerlink" href="#settings-screen" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">—-</div>
+<div class="line"><em>[Default values are marked in bold]</em></div>
+</div>
+<p>You can access the Settings screen by pressing <img alt="start" src="_images/568074192-start.png" /> from games/apps
+pages then selecting Settings in the menu. This screen allows you to
+configure main OPL settings.</p>
+<p>(TODO: image file <code class="docutils literal notranslate"><span class="pre">3234875202-settings.png</span></code> is missing)</p>
+<p><strong>Settings screen :</strong></p>
+<ul class="simple">
+<li><p><strong>Disable Debug Colors :</strong> &lt; <strong>Off</strong> / On &gt; – disables the color
+screens while games are loading if set to ON. If you are
+experimenting an issue that compatibility modes can not solve, you
+can try to enable it. If you are stuck at a white color during the
+game boot, it usually means a failure to load the main ELF of your
+game (usually due to a bad disc image). You can either : rename the
+.iso using the old naming syntax (&lt;game_ID&gt;.Name of your game.iso) –
+works only for a very few games and only for USB and ETH modes – or
+make a new image of your game (check it’s MD5 checksum after and be
+sure that it matches against MD5 checksum from redump.org). Any other
+color means a failure in OPL initialization (<strong>uncorrectable errors
+for the user</strong>) and should be reported in the <a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-project-v0-9-3-a-62141/">main OPL
+thread</a>
+so they can be taken care by the developers.</p></li>
+</ul>
+<p>More info about debug colors
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-official-compatibility-list-thread-156233/index2.html#post1208413">here</a>.</p>
+<ul class="simple">
+<li><p><strong>IGR Path :</strong> &lt; <strong>not set</strong> &gt; – allows you configure a path to an
+ELF for OPL to launch upon Exit OPL [main menu] or from an IGR reset
+(in-game). Leave this blank to exit/IGR to Browser/OSDSYS. Only MC
+paths (example : mc0:/BOOT/BOOT.ELF) are supported. Note : you can
+set IGR to load OPL again – just keep in mind that it might cause
+some compatibility issue. Read
+<a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-compatibility-list-site-132906/index11.html#post1210303">here</a>.
+For these games, you can deny IGR by enabling “Mode 6 – Disable IGR”.</p></li>
+<li><p><strong>Enable write operations :</strong> &lt; <strong>Off</strong> / On &gt; – when set to ON,
+allows you to display the rename and delete options on screen from
+the Hint menu on each list. Disable it (OFF) to prevent accidental
+renaming or deletion. When write operations is disabled, the VMC
+options to configure an existing VMC (change its size or delete) are
+disabled too. You need to set it to ON to be able to access HDL
+server.</p></li>
+<li><p><strong>Remember last played game :</strong> &lt; <strong>Off</strong> / On &gt; – when set to ON,
+the last selected game will be the first in the displayed listing
+each time you return to the games list. You can also set a countdown
+to autolaunch this last selected game (in seconds, from 9 to 1 – 0 to
+disable autolaunch).</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Check USB Game Fragmentation :</strong> &lt; <strong>Off</strong> / On &gt; – allows OPL to
+warn you if games on your USB devices are too fragmented to launch.
+Recommended setting is ON. This is NOT a workaround to not defragment
+your USB devices.</p></li>
+<li><p><strong>USB and ETH Prefix Path(s) :</strong> &lt; <strong>not set</strong> &gt; – allows you to
+configure multiple share paths to USB or ETH based devices, and
+troubleshoot some picky NAS devices that may add a sub-path to a
+share. This is also useful for people wanting to use the same
+external USB device either connected on their NAS and accessed
+through SMB, or directly (in traveler mode) to the PS2. Usually NAS
+don’t allow to share the “root” of the device, so you have to put
+your games into, let’s say a “PS2SMB” folder. When using this same
+device in USB mode, simply enter “PS2SMB” as USB prefix and you’re
+good. (The prefix is limited to 32 characters).</p></li>
+<li><p><strong>Automatic HDD spin down :</strong> <strong>20</strong> – this option allows you to
+specify an idle time-out of an HDD before it automatically spins
+down. The value is in minutes with a 20 minute max. If set to 0, the
+automatic spin-down is disabled and the HDD won’t be stopped – not
+even when using IGR.</p></li>
+</ul>
+<hr class="docutils" />
+<p>By default all devices are disabled and OPL will not enable/display any
+devices until you set them to.</p>
+<ul class="simple">
+<li><p><strong>USB device start mode :</strong> &lt; <strong>Off</strong> / Manual / Automatic &gt;</p></li>
+<li><p><strong>HDD device start mode :</strong> &lt; <strong>Off</strong> / Manual / Automatic &gt;</p></li>
+<li><p><strong>ETH device start mode :</strong> &lt; <strong>Off</strong> / Manual / Automatic &gt;</p></li>
+<li><p><strong>Applications start mode :</strong> &lt; <strong>Off</strong> / Manual / Automatic &gt;</p></li>
+<li><p><strong>OFF</strong> – removes the device from being selectable from the menu bar
+in the games pages. Recommended if you’re not using this device.</p></li>
+<li><p><strong>MANUAL</strong> – allows the device to be selectable from the menu bar in
+the games pages, but will not enable the device until the selected
+button is pressed. Can be useful if more than one device is used).</p></li>
+<li><p><strong>AUTOMATIC</strong> – automatically enables the device at boot and makes it
+selectable from the menu bar in the games pages. The appropriate
+setting for your main device.</p></li>
+<li><p><strong>Default menu :</strong> &lt; <strong>no value</strong> &gt; – choose the page you want OPL to
+display on startup [USB Games / Network games / HDD games]. You can’t
+choose apps page as your default menu.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Press <strong>OK</strong> to validate the changes and exit this screen – or press
+<img alt="title" src="_images/74665754-cross.png" /> or <img alt="image1" src="_images/4184835271-circle.png" /> (according to the select button you choose in the
+settings screen) – to go back to the previous screen without any
+changes made.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="menu.html"
+                        title="previous chapter"><strong>OPL Main menu</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="display-settings.html"
+                        title="next chapter"><strong>Display settings screen</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/settings.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="display-settings.html" title="Display settings screen"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="menu.html" title="OPL Main menu"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Settings screen</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

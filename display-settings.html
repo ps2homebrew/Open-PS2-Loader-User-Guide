@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Display settings screen &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Network config" href="network-config.html" />
+    <link rel="prev" title="Settings screen" href="settings.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="network-config.html" title="Network config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings screen"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Display settings screen</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="display-settings-screen">
+<span id="display-settings"></span><h1><strong>Display settings screen</strong><a class="headerlink" href="#display-settings-screen" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">—-</div>
+<div class="line"><em>[Default values are marked in bold]</em></div>
+</div>
+<p>You can access the Display settings screen by pressing <img alt="start" src="_images/568074192-start.png" /> from
+games/apps pages then selecting Display settings in the menu. This
+screen allows you to set OPL main display and behaviour settings (not
+the games display settings – see <a class="reference internal" href="gsm.html#gsm"><span class="std std-ref">GSM page</span></a> for this).</p>
+<img alt="Display settings screen" src="_images/2489977405-display-settings.png" />
+<p><strong>Display settings screen :</strong></p>
+<ul class="simple">
+<li><p><strong>Theme :</strong> &lt; <strong>OPL</strong> &gt; – OPL is customizable. If you placed any
+themes (named as thm_name_of_your_theme, uncompressed) in the THM
+folder on the device you launch your games from (the device must be
+enabled) they will be listed and you can select them. You can browse
+the theme gallery
+<a class="reference internal" href="theme-gallery.html#theme-gallery"><span class="std std-ref">here</span></a>.
+Also, please note that 0.8 themes are not compatible with 0.9.X (and
+vice versa) – they need to be converted (more info
+<a class="reference external" href="http://psx-scene.com/forums/f150/share-your-theme-art-oplv0-9-beta-80461/index43.html#post1000191">here</a>)</p></li>
+<li><p><strong>Language :</strong> &lt; <strong>English (internal)</strong> / (other) &gt;</p></li>
+</ul>
+<p>OPL uses English as build-in language. This setting can be changed if
+you use a custom language file provided by a translator. OPL 0.9.3 was
+translated into 17 languages (see list at the end of the page) and the
+language pack is included in the bundle. In order to use another
+language than english, place the language file you choose (ends with
+.lng extension) in mc#:/OPL folder (only location available). Some
+languages require also a font that contains specific characters (such as
+é or è for example) to be properly displayed. TTF and OTF font files are
+supported (and included when need in the language pack). Font files can
+be load from 2 locations (and reads in this order) : +OPL (root of your
+OPL partition – HDD must be set on auto) and mc#:/OPL folder. If not
+used, OPL will use its enbedded font (FreeSans.ttf) – but expect
+garbage. For more info about language and font, read the language pack
+readme.txt file. You can submit a new language translation
+<a class="reference external" href="http://psx-scene.com/forums/f150/opl-0-9-3-official-beta-revisions-language-pack-156212/">here</a>.</p>
+<ul class="simple">
+<li><p><strong>Scrolling :</strong> &lt; Slot / <strong>Medium</strong> / Fast &gt; – allows you to select a
+scrolling speed to navigate in the menus and games/apps pages.</p></li>
+<li><p><strong>Automatic sorting :</strong> &lt; Off / <strong>On</strong> &gt; – set it to ON for
+alphabetical listing order, OFF for installed listing order.</p></li>
+<li><p><strong>Automatic Refresh :</strong> &lt; <strong>Off</strong> / On &gt; – OPL will poll your device
+to check if the games list you are currently in needs to be
+refreshed. This is useful for USB device swapping, and also for SMB
+mode if you added/deleted any games on your Share while OPL is
+running. If you can encounter an issue with this being ON, you can
+disable it by setting it to OFF. While OFF, you can still manually
+refresh the games list by pressing SELECT.</p></li>
+<li><p><strong>Enable Cover Art :</strong> &lt; <strong>Off</strong> / On &gt; – set it to ON if you want to
+use ARTs (covers, icons, backgrounds, screens…). Be sure to enable
+the device they are stored on. If you use several devices, you need
+to copy your ART folder (and its content) on all of them.</p></li>
+<li><p><strong>Display info page :</strong> &lt; <strong>Off</strong> / On &gt; – this option allows for an
+extra page of information to be displayed by OPL prior to launching a
+game. The page is configurable (See Themes section) and some themes
+for OPL 0.9.X may require this option to be enabled for full
+functionality. OPL build-in GUI doesn’t support info page. See a
+sample of an example of info-page
+<a class="reference internal" href="info-page-sample.html#info-page-sample"><span class="std std-ref">here</span></a>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Colors :</strong> this option allows to change OPL default GUI colors. It not
+available when using a custom theme (you have to manually edit the
+conf_theme.cfg of the theme for this.)</p>
+<p>Press the select button and a color selection screen will open to allow
+you to make color changes. Press Up / Down to choose between red / green
+/ blue. Press left / right to change color. Press the select button
+again to set the changes and return to the previous screen. Press the
+cancel button (either X or O, according to your choice) to return to the
+previous screen without any changes.</p>
+<ul class="simple">
+<li><p><strong>Text color :</strong> color used to render text on screen.</p></li>
+<li><p><strong>Dialog color :</strong> color used to render text of the dialog items.</p></li>
+<li><p><strong>Selected color :</strong> color used for the current selected text item.</p></li>
+<li><p><strong>Background color :</strong> defines the background color, which is used
+for the background in color mode, and for the plasma color.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Video Mode :</strong> &lt; <strong>Auto</strong> / (others) &gt; – this option lets you set
+the video mode OPL uses in the GUI. Valid options are AUTO, PAL, and
+NTSC – à compléter -. It is recommended to leave this mode to Auto as
+some bugs regarding themes, artwork, and games lists exist when this
+is set to any other mode. (tjs valide .)</p></li>
+<li><p><strong>Wide screen :</strong> &lt; <strong>Off</strong> / On &gt; – you can set this option to ON if
+you’re using a widescreen TV or Monitor. This option allows to not
+stretch ARTs and themes elements if used (and if the theme is
+properly coding and supports wide screen mode).</p></li>
+</ul>
+<p><strong>Note :</strong> the last two settings are for <strong>OPL GUI only</strong>, not for
+games.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Press <strong>OK</strong> to validate the changes and exit this screen – or press
+<img alt="title" src="_images/74665754-cross.png" /> or <img alt="image1" src="_images/4184835271-circle.png" /> (according to the select button you choose in the
+settings screen) – to go back to the previous screen without any
+changes made.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>OPL 0.9.3 language pack content :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Arabic</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@LightWave</span>
+<span class="n">Bulgarian</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@wisi</span>
+<span class="n">Czech</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@JimmySmith</span>
+<span class="n">French</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@ShaolinAssassin</span>
+<span class="n">German</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">ps2guy</span>
+<span class="n">Indonesian</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">verislasher</span>
+<span class="n">Italian</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@jauffreBlades</span>
+<span class="n">Laotian</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">blackbutterfly</span>
+<span class="n">Polish</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@dragolice</span>
+<span class="n">Portuguese</span><span class="o">-</span><span class="n">BR</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@gledson999</span>
+<span class="n">Portuguese</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">danielb</span>
+<span class="n">Russian</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">druchapucha</span> <span class="o">&amp;</span><span class="c1">#38; frodosumkin</span>
+<span class="n">Spanish</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@ElPatas</span>
+<span class="n">Swedish</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">Flaya</span>
+<span class="n">Traditional</span> <span class="n">Chinese</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="nd">@kane159</span>
+<span class="n">Turkish</span> <span class="o">-</span> <span class="n">translated</span> <span class="n">by</span> <span class="n">dante</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="settings.html"
+                        title="previous chapter"><strong>Settings screen</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="network-config.html"
+                        title="next chapter"><strong>Network config</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/display-settings.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="network-config.html" title="Network config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings screen"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Display settings screen</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

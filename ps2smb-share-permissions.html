@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>How to share PS2SMB folder over the network and set permissions for access &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>How to share PS2SMB folder over the network and set permissions for access</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-share-ps2smb-folder-over-the-network-and-set-permissions-for-access">
+<span id="ps2smb-share-permissions"></span><h1><strong>How to share PS2SMB folder over the network and set permissions for access</strong><a class="headerlink" href="#how-to-share-ps2smb-folder-over-the-network-and-set-permissions-for-access" title="Permalink to this headline">¶</a></h1>
+<section id="windows-xp">
+<h2><em>Windows XP :</em><a class="headerlink" href="#windows-xp" title="Permalink to this headline">¶</a></h2>
+<p><strong>Enable file sharing :</strong></p>
+<p>Simple File Sharing is on by default , so most likely you have SMB
+enabled, but if you don’t or don’t wish to enable it, you can enable the
+Guest Account to connect to the SMB share.</p>
+<div class="line-block">
+<div class="line">1. Ensure that Simple File Sharing is enabled (it should be on by
+default). To check do this : [My computer &gt; Tools &gt; Folder Options &gt;
+View tab]. Scroll down in the window and make sure that “Use Simple
+File Sharing (Recommended)” is ticked. Press OK.</div>
+<div class="line">Note : WinXP Home doesn’t have this option as it is ON by default and
+can not be turned OFF.</div>
+</div>
+<p><strong>Setting a Sharename :</strong></p>
+<p>2. Right click on the folder you want to share (or Partition drive), and
+go to “Sharing and Security” (sharing a drive will prompt a warning
+first about the risks of sharing it over a network).</p>
+<p>3. In Network Sharing and Security, place a mark in the box for “Share
+this folder on the network”, then give the “Share Name” the name PS2SMB
+(default name) – or any name you want, but it must match into OPL
+network configuration. Place also a mark in the box for “Allow network
+users to change my files”.</p>
+<img alt="title" src="_images/2853784650-xp_share.png" />
+<div class="line-block">
+<div class="line"><strong>Sources :</strong></div>
+<div class="line">. <a class="reference external" href="http://opl.sksapps.com/index.php?opl=config_net.html">OPL 0.8 User
+Guide</a>.</div>
+<div class="line">. <a class="reference external" href="https://versatile1.wordpress.com/2010/03/15/how-to-boot-games-off-network-smb-with-playstation-2-ps2-using-openps2loader-a-novice-guide/">Welcome to the Underground
+blog</a>.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="windows-vista">
+<h2><em>Windows Vista :</em><a class="headerlink" href="#windows-vista" title="Permalink to this headline">¶</a></h2>
+<p>Seriously, is someone still using Vista ? :P</p>
+</section>
+<hr class="docutils" />
+<section id="windows-7">
+<h2><em>Windows 7 :</em><a class="headerlink" href="#windows-7" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sharing your PS2 folder :</strong></p>
+<div class="line-block">
+<div class="line">1. Right-click on the folder you want to share, then go to “Share
+with” tab ;</div>
+<div class="line">2. Select “Specific people” ;</div>
+<div class="line">3. Choose “Everyone” and set properties for “Everyone” to
+“read/write”.</div>
+</div>
+<p><strong>Setting a share name :</strong></p>
+<div class="line-block">
+<div class="line">4. Right click on your shared folder, and go to “Properties”, and then
+“Sharing Tab” ;</div>
+<div class="line">5. Click on “Advanced Sharing” and then click on “Share this folder”.</div>
+<div class="line">6. Give share name the name PS2SMB (default name) – or any name you
+want, but it must match into OPL network configuration. Click OK.</div>
+</div>
+<img alt="title" src="_images/4059816955-7_share.png" />
+<p><strong>Setting your network profile :</strong></p>
+<p>7. Now click on “Network and Sharing Center”(blue link as shown in the
+picture above). Under the Public profile, please configure it as shown
+in the screenshot below :</p>
+<img alt="title" src="_images/1130922764-7_settings.png" />
+<div class="line-block">
+<div class="line"><strong>Sources :</strong></div>
+<div class="line">. <a class="reference external" href="http://opl.sksapps.com/index.php?opl=config_net.html">OPL 0.8 User
+Guide</a>.</div>
+<div class="line">. <a class="reference external" href="https://versatile1.wordpress.com/2010/03/15/how-to-boot-games-off-network-smb-with-playstation-2-ps2-using-openps2loader-a-novice-guide/">Welcome to the Underground
+blog</a>.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="windows-8">
+<h2><em>Windows 8 :</em><a class="headerlink" href="#windows-8" title="Permalink to this headline">¶</a></h2>
+<p>Very similar to Windows 7 method. See
+<a class="reference external" href="http://www.dummies.com/computers/computer-networking/how-to-share-folders-and-documents-on-a-windows-8-network/">here</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="windows-10">
+<h2><em>Windows 10 :</em><a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
+<p>(to be completed)</p>
+</section>
+<hr class="docutils" />
+<section id="mac-os-x">
+<h2><em>Mac OS X :</em><a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">1. Open the “System Preferences” app.</div>
+<div class="line">2. Go to the “Sharing” folder.</div>
+</div>
+<img alt="title" src="_images/1664414146-mac1.png" />
+<p>3. In the list of services on the left side of the window, go to the
+“File Sharing” item and click on the “Options…” button.</p>
+<img alt="title" src="_images/2748342783-mac2.png" />
+<p>4. Enable the “Share files and folders using SMB” option and click on
+the “Done” button.</p>
+<img alt="title" src="_images/4029471397-mac3.png" />
+<p>5. Add the folder you want to share (ie. PS2SMB) to the “Shared Folders”
+list by dragging and dropping it in the “Shared Folders” list and check
+that “Everyone” has at least “Read Only” rights to this folder in the
+“Users” list.</p>
+<img alt="title" src="_images/1833557120-mac4.png" />
+<ol class="arabic simple" start="6">
+<li><p>Your folder should be shared over SMB.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><strong>Source :</strong></div>
+<div class="line">. <a class="reference external" href="http://opl.sksapps.com/index.php?opl=config_net.html">OPL 0.8 User
+Guide</a>.</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>How to share PS2SMB folder over the network and set permissions for access</strong></a><ul>
+<li><a class="reference internal" href="#windows-xp"><em>Windows XP :</em></a></li>
+<li><a class="reference internal" href="#windows-vista"><em>Windows Vista :</em></a></li>
+<li><a class="reference internal" href="#windows-7"><em>Windows 7 :</em></a></li>
+<li><a class="reference internal" href="#windows-8"><em>Windows 8 :</em></a></li>
+<li><a class="reference internal" href="#windows-10"><em>Windows 10 :</em></a></li>
+<li><a class="reference internal" href="#mac-os-x"><em>Mac OS X :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/ps2smb-share-permissions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>How to share PS2SMB folder over the network and set permissions for access</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

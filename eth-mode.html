@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ETH mode &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="HDD mode" href="hdd-mode.html" />
+    <link rel="prev" title="USB Games" href="usb-mode.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="hdd-mode.html" title="HDD mode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usb-mode.html" title="USB Games"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>ETH mode</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="eth-mode">
+<h1><strong>ETH mode</strong><a class="headerlink" href="#eth-mode" title="Permalink to this headline">¶</a></h1>
+<p>Open PS2 Loader 0.9.3 supports loading games from ethernet. It uses the
+SMB (Server Message Block) protocol to connect the PS2 to a PC’s shared
+folder. You can connect your console to a router with an ethernet cable
+if you already have a network setup or connect directly to your PC with
+a crossover cable.</p>
+<p>The game formats are the same as on USB devices. No special formatting
+is required, any of the PC’s normal file systems can be used. There is a
+disadvantage of using the FAT32 file system, as it has a 4GB limitation
+and you will need to use a USB Installing program for games over 4GBs.
+If you are using the FAT32 file system, read the <a class="reference internal" href="usb-mode.html#usb-mode"><span class="std std-ref">USB games page</span></a>
+for more informations.</p>
+<img alt="title" src="_images/1221205935-smb.png" />
+<p>To be able to use SMB, you will need to create a folder – usually named
+“PS2SMB” -, to share it over your network and also to give permission to
+your PC account(s). For more informations about how to share a folder
+and give permissions to account according to your OS, see this
+<a class="reference internal" href="ps2smb-share-permissions.html#ps2smb-share-permissions"><span class="std std-ref">page</span></a>.</p>
+<p>You will use PS2SMB folder to store your PS2 games in a very similar way
+to the USB mode : iso under 700MB have to be dropped into the CD folder,
+iso over 700MB into the DVD folder. For PS2 games over 4GB, there are 2
+possibilities : either you use FAT32 as file system, and you will have
+to slice them into parts – just like in USB mode, or you use NTFS, and
+you can drop them as ico in the DVD folder. The other folders – ART,
+VMC, CHT, CFG… – will be created when you connect your PS2 to your
+network for the first time.</p>
+<hr class="docutils" />
+<section id="opl-eth-mode">
+<h2><em>OPL ETH mode :</em><a class="headerlink" href="#opl-eth-mode" title="Permalink to this headline">¶</a></h2>
+<p>You need to enable the ETH device before you can use it. In OPL menu, go
+to Settings and set ETH device start mode to MANUAL or AUTO. You should
+now be able to access the ETH Games page. If you have enabled the device
+and if your PS2 games aren’t displayed in the ETH games page, there are
+a few possible things to check :</p>
+<ul class="simple">
+<li><p>no connection / bad connection / wrong or bad ethernet cable ;</p></li>
+<li><p>incorrect network configurations, port or firewall blocking ;</p></li>
+<li><p>fileSharing is not enabled on PC, incorrect sharenames (not matching)
+or permissions not set ;</p></li>
+<li><p>incorrect username / password or username is not set – while required
+;</p></li>
+<li><p>incorrect NetBIOS name / not entered in caps ;</p></li>
+<li><p>DHCP not enabled in router settings, PS2 IP adresses not reserved
+correctly ;</p></li>
+<li><p>DHCP used while PS2 directly connect to PC ;</p></li>
+<li><p>(…)</p></li>
+</ul>
+<p><strong>Note :</strong> OPL has now error codes that help you to troubleshoot your
+network setup.</p>
+<p><strong>Error code &gt; what to do :</strong></p>
+<ul class="simple">
+<li><p>%d: Cannot connect to SMB server &gt; check your network settings.</p></li>
+<li><p>%d: Cannot log into SMB server &gt; wrong password.</p></li>
+<li><p>%d: Cannot open SMB share &gt; check PS2SMB folder permissions.</p></li>
+<li><p>%d: DHCP server unavailable &gt; DHCP used with a static IP, check your
+router settings. If no router used, change PS2 IP adress type from
+DHCP to STATIC.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>ETH mode</strong></a><ul>
+<li><a class="reference internal" href="#opl-eth-mode"><em>OPL ETH mode :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usb-mode.html"
+                        title="previous chapter"><strong>USB Games</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hdd-mode.html"
+                        title="next chapter"><strong>HDD mode</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/eth-mode.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="hdd-mode.html" title="HDD mode"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usb-mode.html" title="USB Games"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>ETH mode</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

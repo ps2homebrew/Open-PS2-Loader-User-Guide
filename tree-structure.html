@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>OPL overview &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Navigation/controls" href="nav-controls.html" />
+    <link rel="prev" title="OPL overview" href="overview.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="nav-controls.html" title="Navigation/controls"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="OPL overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>OPL overview</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="opl-overview">
+<h1><strong>OPL overview</strong><a class="headerlink" href="#opl-overview" title="Permalink to this headline">¶</a></h1>
+<section id="opl-configuration-files">
+<h2><em>OPL Configuration files :</em><a class="headerlink" href="#opl-configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>OPL will store its settings into 2 different configuration files –
+conf_opl.cfg and conf_network.cfg – whereas OPL 0.9.2 used only one file
+(conf_opl.cfg). OPL main settings and display settings will be saved
+into conf_opl.cfg – while network config settings are saved into
+conf_network.cfg.</p>
+<p>Another difference with 0.9.2 is that conf_opl.cfg doesn’t store GSM
+settings anymore – since GSM is now configurable per-game. These
+settings, along with compatibility modes, VMC data… are now saved into
+per-game specific files – named &lt;game_IG&gt;.cfg – and stored in the CFG
+folder of the device you launch your games from.</p>
+<p>conf_opl.cfg and conf_network.cfg will be read / loaded / saved in this
+order (basically from the faster to the slowler device) :</p>
+<p><strong>MC0 &gt;&gt; MC1 &gt;&gt; HDD &gt;&gt; USB</strong></p>
+<p>If OPL fails to write or find its settings on MC, it looks on HDD for
+them and etc…</p>
+<p>If you want to save OPL settings into another device that the MC, remove
+all MC from slots, disable all devices except the one you want to save
+onto and “save changes” (don’t forget to remove your settings from
+mc:/OPL folder if you had). At next launch, OPL will load your settings
+from the device you choose (and save here), even if you have a MC
+inserted in a slot.</p>
+<p>For HDD, conf_opl.cfg and conf_network.cfg are stored in the root of the
++OPL partition ; for USB, they are stored in the root of the USB device.</p>
+<p><strong>Note :</strong> OPL folder – along with opl.icn and icon.sys – will still be
+created on your mc, even if you choose to save your settings on another
+device.</p>
+<p>Any other file – which all are game related : ARTs, cheats, VMC… – can
+not be stored on the MC – but only on the device you launch your games
+from.</p>
+</section>
+<hr class="docutils" />
+<section id="directory-structure">
+<h2><em>Directory structure :</em><a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>OPL uses the same directory tree structure across HDD, SMB, and USB
+modes. These folders will be automatically created when you launch OPL
+for the first time and select and choose your main device (choose a
+“start mode” in Settings screen). For HDD users, a 128Mb +OPL partition
+will be created (of course, the CD and DVD folders will not be created).</p>
+<p><strong>Directory tree structure :</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 37%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Folder name</strong></p></td>
+<td><p><strong>Usage</strong></p></td>
+<td><p><strong>Example</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>CD</p></td>
+<td><p>For storing games on
+CD media ( &lt; 700Mb) –
+i.e. blue-bottom discs
+– named as My game.iso
+(you no longer need to
+use the Game ID in the
+iso name).</p></td>
+<td><p>(my example isn’t an
+CD game :P )</p></td>
+</tr>
+<tr class="row-odd"><td><p>DVD</p></td>
+<td><p>For storing DVD5 and
+DVD9 game images –
+named as My game.iso
+(you no longer need to
+use the Game ID in the
+iso name). These
+images, when over 4GB,
+<strong>must</strong> be sliced
+into several parts if
+you use OPL in USB
+mode (due to FAT32
+limitation).</p></td>
+<td><p>Okami.iso</p></td>
+</tr>
+<tr class="row-even"><td><p>VMC</p></td>
+<td><p>For storing Virtual
+Memory Card images –
+usually named as
+&lt;game_ID&gt;_0/1.bin&gt;.</p></td>
+<td><p>SLES_544.39_0.bin</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFG</p></td>
+<td><p>For storing per-game
+configuation files –
+named as
+&lt;game_ID.cfg&gt;.</p></td>
+<td><p>SLES_544.39.cfg</p></td>
+</tr>
+<tr class="row-even"><td><p>CFG-DEV</p></td>
+<td><p>For storing per-game
+configuation files –
+named as &lt;game_ID.cfg&gt;
+– <em>when saved from a
+OPL beta version</em>.</p></td>
+<td><p>SLES_544.39.cfg</p></td>
+</tr>
+<tr class="row-odd"><td><p>ART</p></td>
+<td><p>For storing ART files
+(coverboxes,
+backgrounds and icons
+disc images… – named
+as &lt;game_ID.COV.jpg&gt;
+(cover art).</p></td>
+<td><p>SLES_544.39.COV.jpg</p></td>
+</tr>
+<tr class="row-even"><td><p>THM</p></td>
+<td><p>For storing custom
+themes – named as
+&lt;t
+hm_name_of_the_theme&gt;.</p></td>
+<td><p><a class="reference external" href="http://psx-scene.com/forums/f150/share-your-theme-art-oplv0-9-beta-80461/index43.html#post996400">thm_Un
+iverse_9</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CHT</p></td>
+<td><p>For storing cheats
+files – named as
+&lt;game_ID.cht&gt;.</p></td>
+<td><p>SLES_544.39.cht</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note :</strong> the same suffix is used on all devices. Ex : cheat files are
+always saved as &lt;game_ID.<strong>cht</strong>&gt;, no matter where they are stored in.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>OPL overview</strong></a><ul>
+<li><a class="reference internal" href="#opl-configuration-files"><em>OPL Configuration files :</em></a></li>
+<li><a class="reference internal" href="#directory-structure"><em>Directory structure :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter"><strong>OPL overview</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="nav-controls.html"
+                        title="next chapter"><strong>Navigation/controls</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tree-structure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="nav-controls.html" title="Navigation/controls"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="OPL overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>OPL overview</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

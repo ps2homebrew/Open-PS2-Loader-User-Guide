@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>In-Game-Reset &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Apps Page" href="apps-page.html" />
+    <link rel="prev" title="Virtual Memory Cards" href="vmc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="apps-page.html" title="Apps Page"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vmc.html" title="Virtual Memory Cards"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>In-Game-Reset</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="in-game-reset">
+<h1><strong>In-Game-Reset</strong><a class="headerlink" href="#in-game-reset" title="Permalink to this headline">¶</a></h1>
+<p>OPL features In-Game-Reset – IGR for short. This feature allows you to
+quit a game, return to the games page and select another game to play,
+choose a different application to run , go to the system main screen or
+power-down your system without needing to get up and touch it. IGR is
+enabled by default for all games – but you can disable it if you want.</p>
+<ul class="simple">
+<li><p>Pressing <img alt="L1" src="_images/359344587-L1.png" /> + <img alt="L2" src="_images/3537024755-L2.png" /> + <img alt="R1" src="_images/3407914923-R1.png" /> + <img alt="R2" src="_images/2989855896-R2.png" /> + <img alt="select" src="_images/3991913910-select.png" /> + <img alt="start" src="_images/568074192-start.png" /> <em>in-game</em>
+will stop a game and launch the ELF you set for IGR path for [Menu &gt;
+Settings to set an IGR path]. Only MC paths (example :
+mc0:/BOOT/BOOT.ELF) are supported.</p></li>
+<li><p>Pressing <img alt="L1" src="_images/359344587-L1.png" /> + <img alt="L2" src="_images/3537024755-L2.png" /> + <img alt="L3" src="_images/697506606-L3.png" /> + <img alt="R1" src="_images/3407914923-R1.png" /> + <img alt="R2" src="_images/2989855896-R2.png" /> + <img alt="R3" src="_images/2935175956-R3.png" /> <em>in-game</em> will
+power-off the console, placing it in stand-by mode.</p></li>
+</ul>
+<p><strong>Notes :</strong></p>
+<ul class="simple">
+<li><p>Not every game is going to work with IGR, as some games have a
+similar option or are not compatible with IGR and some games may not
+work at all unless IGR is disabled. You can disable the IGR function
+in the Game settings screen by setting Mode 6 to ON.</p></li>
+<li><p>If IGR isn’t working, you can try to find the issue by enabling the
+debug color [Settings screen]. If you are stuck at a red screen, it
+usually means a failure to load the ELF you choose as an IGR exit
+option. Check the path of your ELF, or if the ELF file is not either
+bad or missing.</p></li>
+</ul>
+<p><strong>IGR debug colors sequence
+(explained</strong><a class="reference external" href="http://psx-scene.com/forums/f150/open-ps2-loader-official-compatibility-list-thread-156233/index2.html#post1208413">here</a><strong>)
+:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">White</span> <span class="o">-</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">initialization</span> <span class="n">of</span> <span class="n">SIFCMD</span> <span class="ow">and</span> <span class="n">SIFRPC</span>
+<span class="n">Dark</span> <span class="n">Blue</span> <span class="o">-</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">SPU</span> <span class="n">initialization</span>
+<span class="n">Red</span> <span class="o">-</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">IOP</span> <span class="n">reboot</span><span class="p">,</span> <span class="n">removal</span> <span class="n">of</span> <span class="n">kernel</span> <span class="n">hooks</span><span class="p">,</span> <span class="n">reinitialization</span> <span class="n">of</span> <span class="n">TLB</span> <span class="p">(</span><span class="k">for</span> <span class="n">GTA</span><span class="o">/</span><span class="n">GT4</span><span class="p">)</span> <span class="ow">and</span> <span class="n">stopping</span> <span class="n">of</span> <span class="n">performance</span> <span class="n">counter</span> <span class="p">(</span><span class="k">for</span> <span class="n">GT4</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Green</span> <span class="o">-</span> <span class="n">Uninstallation</span> <span class="n">of</span> <span class="n">GSM</span>
+<span class="n">Blue</span> <span class="o">-</span> <span class="n">Uninstallation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cheat</span> <span class="n">engine</span>
+<span class="n">Yellow</span> <span class="o">-</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">synchronization</span> <span class="k">with</span> <span class="n">IOP</span> <span class="n">boot</span>
+<span class="n">Pink</span> <span class="o">-</span> <span class="n">Start</span> <span class="n">of</span> <span class="p">(</span><span class="n">re</span><span class="o">-</span><span class="p">)</span><span class="n">initialization</span> <span class="n">of</span> <span class="n">SIFCMD</span> <span class="ow">and</span> <span class="n">SIFRPC</span>
+<span class="n">Dark</span> <span class="n">Geen</span> <span class="o">-</span> <span class="n">Deinitialization</span> <span class="n">of</span> <span class="n">SIFRPC</span> <span class="ow">and</span> <span class="n">SIFCMD</span>
+<span class="n">If</span> <span class="n">the</span> <span class="n">target</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">ELF</span><span class="p">,</span> <span class="n">then</span> <span class="p">(</span><span class="n">otherwise</span><span class="p">,</span> <span class="n">just</span> <span class="n">invoke</span> <span class="n">the</span> <span class="n">Exit</span> <span class="n">syscall</span><span class="p">)</span> <span class="o">-</span> <span class="n">ELF</span> <span class="n">Loader</span> <span class="n">codes</span><span class="p">:</span>
+<span class="n">Blue</span><span class="o">-</span><span class="n">Green</span><span class="p">:</span> <span class="p">(</span><span class="n">re</span><span class="o">-</span><span class="n">re</span><span class="o">-</span><span class="p">)</span><span class="n">initialization</span> <span class="n">of</span> <span class="n">SIFCMD</span> <span class="ow">and</span> <span class="n">SIFRPC</span><span class="o">.</span>
+<span class="n">Dark</span> <span class="n">Red</span><span class="p">:</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">SBV</span> <span class="n">patch</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">the</span> <span class="n">LoadModuleBuffer</span> <span class="n">RPC</span> <span class="n">function</span>
+<span class="n">Sky</span><span class="o">-</span><span class="n">Blue</span><span class="p">:</span> <span class="n">Load</span> <span class="n">rom0</span><span class="p">:</span><span class="n">SIO2MAN</span><span class="p">,</span> <span class="n">rom0</span><span class="p">:</span><span class="n">MCMAN</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">target</span> <span class="n">ELF</span><span class="o">.</span>
+<span class="n">Orange</span><span class="p">:</span> <span class="n">Start</span> <span class="n">of</span> <span class="n">ELF</span> <span class="n">execution</span>
+<span class="n">Red</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">ELF</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">bad</span><span class="o">/</span><span class="n">missing</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="vmc.html"
+                        title="previous chapter"><strong>Virtual Memory Cards</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps-page.html"
+                        title="next chapter"><strong>Apps Page</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/igr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="apps-page.html" title="Apps Page"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vmc.html" title="Virtual Memory Cards"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>In-Game-Reset</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

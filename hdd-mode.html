@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>HDD mode &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Game settings screen" href="game-settings.html" />
+    <link rel="prev" title="ETH mode" href="eth-mode.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="game-settings.html" title="Game settings screen"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="eth-mode.html" title="ETH mode"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>HDD mode</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="hdd-mode">
+<h1><strong>HDD mode</strong><a class="headerlink" href="#hdd-mode" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Note :</strong> HDD USB users must of course refer to this
+:ref: <cite>page &lt;usb_mode&gt;</cite>.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Open PS2 Loader 0.9.3 supports internal HDD, up to 2TB (limit). Your
+HDD can be either an IDE HDD connected directly to the Network Adapter
+or a SATA HDD connected to the Network Adapter using an IDE-to-SATA
+adapter. Non-SONY HDD are supported. You can check an (old) HDD
+compatibility list <a class="reference external" href="http://ps2drives.x-pec.com/?p=list">here</a>.
+Network Adapter clones are not recommended – their quality may vary,
+some may work, some don’t… Well, get away from them and pick a genuine
+SONY one.</div>
+<div class="line">Your HDD requires to be formatted to PSF (SONY own formatting scheme
+and filesystem) before you can install any games on it. Your games
+must be installed in the HDLoader format – you can not installed them
+as .iso.</div>
+</div>
+<img alt="title" src="_images/3629385419-hdd.png" />
+<section id="formatting-your-internal-hdd">
+<h2><em>Formatting your internal HDD :</em><a class="headerlink" href="#formatting-your-internal-hdd" title="Permalink to this headline">¶</a></h2>
+<p>The recommended method to format your internal HDD to PSF is
+<a class="reference external" href="http://psx-scene.com/forums/f113/unofficial-launchelf-v4-42-a-37242/">uLaunchELF</a>.
+[FileBroswer &gt; MISC &gt; HddManager &gt; R1 &gt; Format]. Using WnHiip to format
+your PS2 HDD is not recommended.</p>
+</section>
+<hr class="docutils" />
+<section id="installing-ps2-games">
+<h2><em>Installing PS2 games :</em><a class="headerlink" href="#installing-ps2-games" title="Permalink to this headline">¶</a></h2>
+<p>Before you can install your PS2 games on your internal HDD, you need to
+make a image of them – using your favorite dump software (you can use
+<a class="reference external" href="http://imgburn.com/">ImgBurn</a> for that).</p>
+<p>OPL supports HDLoader format for internal HDD. They are several ways and
+tools to install games on your internal HDD :</p>
+<ul class="simple">
+<li><p><strong>using the CD/DVD drive :</strong></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">.
+<a class="reference external" href="http://ichiba.geocities.jp/ysai187/PS2/HDLGameInstaller.htm">HDLGameInstaller</a>
+– by SP193 (PSX-scene thread
+<a class="reference external" href="http://psx-scene.com/forums/f19/hdlgameinstaller-v0-807-obt-115321/">here</a>).</div>
+<div class="line">Please note that DVD9 games can’t be installed this way (CD/DVD drive
+limitation).</div>
+</div>
+<ul class="simple">
+<li><p><strong>over the network, using a pc client :</strong></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">. OPL embedded <a class="reference internal" href="hdl-server.html#hdl-server"><span class="std std-ref">HDL server</span></a></div>
+<div class="line">.
+<a class="reference external" href="http://ichiba.geocities.jp/ysai187/PS2/HDLGameInstaller.htm">HDLGameInstaller</a>
+– by SP193.</div>
+<div class="line">. <a class="reference external" href="https://bitbucket.org/AKuHAK/hdl-dump">HDL_Dump</a> – by AKuHAK
+(PSX-scene thread
+<a class="reference external" href="http://psx-scene.com/forums/f19/new-reworked-hdl_dump-0-9-1-attempt-gain-full-access-hdd-over-network-113411/">here</a>).</div>
+</div>
+<ul class="simple">
+<li><p><strong>your HDD directly connected to your PC :</strong></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">. <a class="reference external" href="https://bitbucket.org/AKuHAK/hdl-dump">HDL_Dump</a> – by AKuHAK
+(PSX-scene thread
+<a class="reference external" href="http://psx-scene.com/forums/f19/new-reworked-hdl_dump-0-9-1-attempt-gain-full-access-hdd-over-network-113411/">here</a>).</div>
+<div class="line">. <a class="reference external" href="http://sksapps.com/winhiip_tutorial.html">WinHIIP 1.7.6</a></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="opl-hdd-mode">
+<h2><em>OPL HDD mode :</em><a class="headerlink" href="#opl-hdd-mode" title="Permalink to this headline">¶</a></h2>
+<p>You need to enable your internal HDD before you can use it. In OPL menu,
+go to Settings and set HDD device start mode to MANUAL or AUTO. You
+should now be able to access the HDD Games page. If you have enabled the
+device and if your PS2 games aren’t displayed in the HDD games page,
+there are a few possible things to check :</p>
+<ul class="simple">
+<li><p>your HDD has not been formatted to the PS2Format for HDL compliant
+partitioning ;</p></li>
+<li><p>games were not installed properly (errors, bad sectors,wrong
+program,etc) ;</p></li>
+<li><p>your network adapter is not working / bad connection ;</p></li>
+<li><p>you are using a network adapter clone ;</p></li>
+<li><p>the HDD is not compatible or damaged/defective ;</p></li>
+<li><p>(…)</p></li>
+</ul>
+<p><strong>Note :</strong> OPL has now error codes that help you to troubleshoot your
+HDD setup.</p>
+<p><strong>Error code &gt; what to do :</strong></p>
+<ul class="simple">
+<li><p>%d: HardDisk Drive not detected &gt;</p></li>
+<li><p>%d: HardDisk Drive not formatted &gt;</p></li>
+<li><p>%d: No network adaptor detected &gt;</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>HDD mode</strong></a><ul>
+<li><a class="reference internal" href="#formatting-your-internal-hdd"><em>Formatting your internal HDD :</em></a></li>
+<li><a class="reference internal" href="#installing-ps2-games"><em>Installing PS2 games :</em></a></li>
+<li><a class="reference internal" href="#opl-hdd-mode"><em>OPL HDD mode :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="eth-mode.html"
+                        title="previous chapter"><strong>ETH mode</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="game-settings.html"
+                        title="next chapter"><strong>Game settings screen</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/hdd-mode.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="game-settings.html" title="Game settings screen"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="eth-mode.html" title="ETH mode"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>HDD mode</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Graphics Synthesizer Mode Selector 0.36.R &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Virtual Memory Cards" href="vmc.html" />
+    <link rel="prev" title="Game settings screen" href="game-settings.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="vmc.html" title="Virtual Memory Cards"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="game-settings.html" title="Game settings screen"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Graphics Synthesizer Mode Selector 0.36.R</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="graphics-synthesizer-mode-selector-0-36-r">
+<span id="gsm"></span><h1><strong>Graphics Synthesizer Mode Selector 0.36.R</strong><a class="headerlink" href="#graphics-synthesizer-mode-selector-0-36-r" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">—-</div>
+<div class="line"><em>[Default values are marked in bold]</em></div>
+</div>
+<p>Open PS2 Loader 0.9.3 features <a class="reference external" href="http://psx-scene.com/forums/f291/gs-mode-selector-development-feedback-61808/">Graphics Synthesizer Mode Selector aka
+GSM</a>
+0.36.R version. GSM allows you to force videos modes in-game. GSM is
+disabled by default so you need to enable it if you want to force video
+modes [Press Configure GSM in the Game settings screen.].</p>
+<p>GSM is not a general option anymore – like in 0.9.2 – but it’s per-game
+specific now. You can enable it for a game and let it disabled for
+another, enable progressive for one, not enable it for another because
+it’s not compatible etc… GSM settings will be saved in &lt;game_ID&gt;.cfg
+files (stored in CFG folder).</p>
+<img alt="title" src="_images/2382098428-gsm.png" />
+<p><strong>GSM screen :</strong></p>
+<ul class="simple">
+<li><p><strong>Enable GSM :</strong> &lt; <strong>OFF</strong> / ON &gt; – pretty obvious : toggles GSM ON
+and let you access other settings.</p></li>
+<li><p><strong>VMODE :</strong> &lt; <strong>NTSC</strong> / (…see list below…) / VGA 640×480i &#64;60hz &gt;
+– allow you to force the video mode selected in-game. Video modes
+list below.</p></li>
+<li><p><strong>HPOS :</strong> &lt; less (up-to -100) / <strong>0</strong> / more (up-to 100) &gt; – allow
+you to adjust the screen horizontally.</p></li>
+<li><p><strong>YPOS :</strong> &lt; less / <strong>0</strong> / more &gt; – allow you to adjust the screen
+vertically.</p></li>
+<li><p><strong>FMV skip :</strong> &lt; <strong>OFF</strong> / ON &gt; – allow you to skip Full Motion
+Videos.</p></li>
+<li><p><strong>OK</strong> : validate the changes made and return to Game settings
+screen.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Available video modes – list :</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">NTSC</span>
+<span class="o">*</span> <span class="n">NTSC</span><span class="o">-</span><span class="n">NI</span>
+<span class="o">*</span> <span class="n">PAL</span>
+<span class="o">*</span> <span class="n">PAL</span><span class="o">-</span><span class="n">NI</span>
+<span class="o">*</span> <span class="n">PAL</span> <span class="nd">@60Hz</span>
+<span class="o">*</span> <span class="n">PAL</span> <span class="nd">@60Hz</span><span class="o">-</span><span class="n">NI</span>
+<span class="o">*</span> <span class="n">PS1</span> <span class="n">NTSC</span> <span class="p">(</span><span class="n">HDTV</span> <span class="mi">480</span><span class="n">p</span> <span class="nd">@60Hz</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">PS1</span> <span class="n">PAL</span> <span class="p">(</span><span class="n">HDTV</span> <span class="mi">576</span><span class="n">p</span> <span class="nd">@50Hz</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">480</span><span class="n">p</span> <span class="nd">@60Hz</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">576</span><span class="n">p</span> <span class="nd">@50Hz</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">720</span><span class="n">p</span> <span class="nd">@60Hz</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">1080</span><span class="n">i</span> <span class="nd">@60Hz</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">1080</span><span class="n">i</span> <span class="nd">@60Hz</span><span class="o">-</span><span class="n">NI</span>
+<span class="o">*</span> <span class="n">HDTV</span> <span class="mi">1080</span><span class="n">p</span> <span class="nd">@60Hz</span>
+<span class="o">*</span> <span class="n">VGA</span> <span class="mi">640</span><span class="n">x480p</span> <span class="p">(</span><span class="nd">@60</span><span class="o">/</span><span class="mi">72</span><span class="o">/</span><span class="mi">75</span><span class="o">/</span><span class="mi">85</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">VGA</span> <span class="mi">640</span><span class="n">x480i</span> <span class="p">(</span><span class="nd">@60</span><span class="o">/</span><span class="mi">72</span><span class="o">/</span><span class="mi">75</span><span class="o">/</span><span class="mi">85</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>HDTV modes requires a component cable – while VGA modes requires a VGA
+cable (or an adaptor connected to a Component cable).</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>GSM settings in &lt;game_ID&gt;.cfg file :</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Name - Description
+$EnableGSM - Set to 1 if GSM is to be enabled, 0 or deleted if not.
+$GSMVMode - Video mode for GSM to set
+$GSMXOffset - X-offset for GSM to use
+$GSMYOffset - Y-offset for GSM to use
+$GSMSkipVideos - Set to 1 if videos are to be skipped with GSM, 0 or deleted if not.
+</pre></div>
+</div>
+<p>It’s just for the record, let GSM deals with it. ;)</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="game-settings.html"
+                        title="previous chapter"><strong>Game settings screen</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="vmc.html"
+                        title="next chapter"><strong>Virtual Memory Cards</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/gsm.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="vmc.html" title="Virtual Memory Cards"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="game-settings.html" title="Game settings screen"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Graphics Synthesizer Mode Selector 0.36.R</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

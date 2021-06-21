@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Widescreen (16:9) for PlayStation 2 games &#8212; Open PS2 Loader  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Related / useful stuff" href="related.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="related.html" title="Related / useful stuff"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Widescreen (16:9) for PlayStation 2 games</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="widescreen-16-9-for-playstation-2-games">
+<h1><strong>Widescreen (16:9) for PlayStation 2 games</strong><a class="headerlink" href="#widescreen-16-9-for-playstation-2-games" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note :</strong> This can NOT be achieved using the “Widescreen” option from
+OPL display settings page.</p>
+<p><strong>Previews :</strong></p>
+<img alt="title" src="http://i.imgur.com/gYElt.giff" />
+<p><em>Final Fantasy X-2</em></p>
+<img alt="title" src="http://www.abload.de/img/pcsx2-2012-09-09-23-1jsxm7.gif" />
+<p><em>Mortal Kombat: Shaolin Monks</em></p>
+<p>As you may know (or not), some PlayStation 2 games natively support 16:9
+ratio. However,</p>
+<ul class="simple">
+<li><p>there is no real standard about how to enable it : somes games
+required 16:9 to be enabled in PlayStation 2 system configuration
+menu to be displayed in widecreen ratio, while some others has their
+16:9 option in their own display settings menu (in game) ;</p></li>
+<li><p>some games has their 16:9 ratio just skewed ;</p></li>
+<li><p>some other games just doesn’t support 16:9.</p></li>
+</ul>
+<p>It’s now possible to get proper 16:9 on a large amount of PlayStation 2
+games. They are several methods to achieve this. Here’s 2 of them.</p>
+<hr class="docutils" />
+<section id="method-1-patch-the-game-image">
+<h2><em>Method 1 : patch the game image :</em><a class="headerlink" href="#method-1-patch-the-game-image" title="Permalink to this headline">¶</a></h2>
+<img alt="title" src="_images/2155596679-preview.png" />
+<p><em>PS2 Patch Engine tool</em></p>
+<p>Basic step-by-step :</p>
+<div class="line-block">
+<div class="line"><strong>(1)</strong> – Create an image of your PlayStation 2 game, either as .iso,
+.img or .bin format ;</div>
+<div class="line"><strong>(2)</strong> – Download <a class="reference external" href="http://psx-scene.com/forums/f19/ps2-patch-engine-117652/#post1088717">PS2 Patch
+Engine</a>
+tool, by
+<a class="reference external" href="http://psx-scene.com/forums/members/pelvicthrustman/">pelvicthrustman</a>
+;</div>
+<div class="line"><strong>(3)</strong> – Get a 16:9 patch for your PlayStation 2 game, either as
+*.pnach file (see the <a class="reference external" href="http://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches?pid=271674#pid271674">PCSX2 widescreen
+archive</a>
+at the bottom of the post), either as RAW code.</div>
+<div class="line"><strong>(4)</strong> – Read the “How to use it” section of this
+<a class="reference external" href="http://psx-scene.com/forums/f19/ps2-patch-engine-117652/#post1088717">post</a>.</div>
+<div class="line"><strong>(5)</strong> – Once done, install your PS2 game for use with OPL, like you
+would for any other games.</div>
+<div class="line"><strong>(6)</strong> – Enjoy !</div>
+</div>
+<p><strong>Note :</strong> WS .pnaches are game specific, which means you can’t apply a
+NTSC-U .pnach over a PAL game and vice-versa (example).</p>
+</section>
+<hr class="docutils" />
+<section id="method-2-using-opl-ps2rd">
+<h2><em>Method 2 : using OPL+PS2RD :</em><a class="headerlink" href="#method-2-using-opl-ps2rd" title="Permalink to this headline">¶</a></h2>
+<p>Process is exactly the same as you would do for any other cheats codes –
+except the fact you also need to convert 16:9 patches from .pnach to RAW
+codes.</p>
+<p><strong>Basic step-by-step :</strong></p>
+<div class="line-block">
+<div class="line"><strong>(1)</strong> – Create a &lt;game_ID&gt;.cht text file, replacing &lt;game_ID&gt; with
+the actual ID of your game. Example – Okami (PAL) : SLES_544.39.cht.</div>
+<div class="line"><strong>(2)</strong> – Extract the main executable of your PS2 game using <a class="reference external" href="http://psx-scene.com/forums/f19/ps2-hacking-toolkit-116460/#post1080650">ELF
+Extractor</a>
+by
+<a class="reference external" href="http://psx-scene.com/forums/members/pelvicthrustman/">pelvicthrustman</a>
+;</div>
+<div class="line"><strong>(3)</strong> – Use <a class="reference external" href="http://psx-scene.com/forums/f293/mastercode-finder-110898/#post1038200">MasterCode
+Finder</a>
+tool, by
+<a class="reference external" href="http://psx-scene.com/forums/members/pelvicthrustman/">pelvicthrustman</a>
+to determine the mastercode of your game ;</div>
+<div class="line"><strong>(4)</strong> – Get a 16:9 patch for your PlayStation 2 game, as *.pnach
+file (see the <a class="reference external" href="http://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches?pid=271674#pid271674">PCSX2 widescreen
+archive</a>
+at the bottom of the post) ;</div>
+<div class="line"><strong>(5)</strong> – Convert your 16:9 patch (.pnach format) to RAW codes using
+<a class="reference external" href="http://psx-scene.com/forums/f293/pnach-converter-2-01-a-110108/#post1031413">PNACH
+Converter</a>
+tool, by
+<a class="reference external" href="http://psx-scene.com/forums/members/pelvicthrustman">pelvicthrustman</a>
+;</div>
+<div class="line"><strong>(6)</strong> – Write the mastercode and WS code in your &lt;game_ID&gt;.cht file,
+like this :</div>
+</div>
+<p>SLES_544.39.cht :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Master</span> <span class="n">Code</span>
+<span class="mi">9020</span><span class="n">FB28</span> <span class="mi">0</span><span class="n">C0FBB2A</span>
+<span class="n">Widescreen</span> <span class="n">Code</span>
+<span class="mi">201974</span><span class="n">d4</span> <span class="mi">3</span><span class="n">c014455</span>
+<span class="mi">20344864</span> <span class="mi">3</span><span class="n">c014455</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>(7)</strong> – Drop your &lt;game_ID&gt;.cht file in your CHT folder on the
+device you launch your games from (either +OPL/CHT, or mass:/CHT, or
+smb:/CHT) ;</div>
+<div class="line"><strong>(8)</strong> – Launch OPL, enable PS2RD in the “Cheats settings screen”,
+and launch your game ;</div>
+<div class="line"><strong>(9)</strong> – Enjoy !</div>
+</div>
+<p><strong>Note :</strong> mastercodes and WS *.pnaches are game specific : you can’t
+use a PAL mastercode for a NTSC-J game, nor apply a NTSC-U .pnach over a
+PAL game and vice-versa (example).</p>
+<div class="line-block">
+<div class="line"><strong>Sources :</strong></div>
+<div class="line">. <a class="reference external" href="http://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches">PSCX2
+forum</a>
+– thanks to everyone who contributed to the archive ;</div>
+<div class="line">. <a class="reference external" href="http://psx-scene.com/forums/f19/ps2-hacking-toolkit-116460/">Pelvicthrustman’s PS2 Hacking
+Toolkit</a>
+by
+<a class="reference external" href="http://psx-scene.com/forums/members/pelvicthrustman/">pelvicthrustman</a>
+– thanks for the great tools provided.</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>Widescreen (16:9) for PlayStation 2 games</strong></a><ul>
+<li><a class="reference internal" href="#method-1-patch-the-game-image"><em>Method 1 : patch the game image :</em></a></li>
+<li><a class="reference internal" href="#method-2-using-opl-ps2rd"><em>Method 2 : using OPL+PS2RD :</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="related.html"
+                        title="previous chapter"><strong>Related / useful stuff</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/widescreen.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="related.html" title="Related / useful stuff"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Open PS2 Loader  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Widescreen (16:9) for PlayStation 2 games</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, PS2 Homebrew Projects.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>
