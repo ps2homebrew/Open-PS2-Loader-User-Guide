@@ -6,8 +6,7 @@
 *Release types description :*
 -----------------------------
 
-`Open PS2 Loader 0.9.3
-bundle <https://bitbucket.org/ifcaro/open-ps2-loader/downloads/OpenPS2Loader_0.9.3.zip>`__
+`Open PS2 Loader 1.0.0 bundle <https://github.com/ps2homebrew/Open-PS2-Loader/releases/download/v1.0.0/OPNPS2LD-v1.0.0.7z>`__
 included several types of the same OPL version. These types come with
 more or less features included.
 
